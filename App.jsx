@@ -40,7 +40,7 @@ return(
 
 <View style={styles.container}>
 
-<Text style={styles.header}>Daily Activity  APP</Text>
+<Text style={styles.header}>Daily Activity  treking APP</Text>
 <Text style={styles.header}>Daily Planner</Text>
 
 <View style={styles.inputContainer}>
