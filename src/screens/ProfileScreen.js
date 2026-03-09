@@ -162,7 +162,7 @@ onChangeText={setWeight}
 </View>
 
 <View style={styles.card}>
-<Text style={styles.label}>Fitness Goal</Text>
+<Text style={styles.label}> My Fitness Goal</Text>
 
 <TextInput
 style={styles.input}
