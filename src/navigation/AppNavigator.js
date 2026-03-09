@@ -6,17 +6,23 @@ import OnboardingScreen from "../screens/OnboardingScreen";
 import LoginScreen from "../screens/LoginScreen";
 import SignupScreen from "../screens/SignupScreen";
 import BottomTabs from "./BottomTabs";
+import WorkoutDetailScreen from "../screens/WorkoutDetailScreen";
+import WorkoutTimerScreen from "../screens/WorkoutTimerScreen";
 
 const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
-  return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Splash" component={SplashScreen} />
-      <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Signup" component={SignupScreen} />
-      <Stack.Screen name="Main" component={BottomTabs} />
-    </Stack.Navigator>
-  );
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Splash" component={SplashScreen} />
+            <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="Signup" component={SignupScreen} />
+            <Stack.Screen name="Main" component={BottomTabs} />
+            <Stack.Screen name="WorkoutDetail" component={WorkoutDetailScreen} />
+            <Stack.Screen name="WorkoutTimer" component={WorkoutTimerScreen}
+            />
+
+        </Stack.Navigator>
+    );
 }

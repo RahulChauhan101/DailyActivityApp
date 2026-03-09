@@ -1,35 +1,33 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 
-export default function WorkoutScreen() {
+export default function WorkoutScreen({ navigation }) {
+
+  const workouts = [
+    { name: "Push Ups", reps: "3 × 15 reps" },
+    { name: "Squats", reps: "3 × 20 reps" },
+    { name: "Plank", reps: "3 × 30 sec" },
+    { name: "Jumping Jacks", reps: "3 × 25 reps" }
+  ];
+
   return (
     <ScrollView style={styles.container}>
 
-      <Text style={styles.header}>Workout</Text>
+      <Text style={styles.header}>Today's Workout</Text>
 
-      <View style={styles.card}>
-        <Text style={styles.title}>Full Body Workout</Text>
-        <Text style={styles.info}>Duration: 30 min</Text>
-        <Text style={styles.info}>Calories: 200 kcal</Text>
-      </View>
+      {workouts.map((item, index) => (
+        <View key={index} style={styles.card}>
+          <Text style={styles.exercise}>{item.name}</Text>
+          <Text style={styles.reps}>{item.reps}</Text>
+        </View>
+      ))}
 
-      <View style={styles.card}>
-        <Text style={styles.title}>Cardio Training</Text>
-        <Text style={styles.info}>Duration: 25 min</Text>
-        <Text style={styles.info}>Calories: 180 kcal</Text>
-      </View>
-
-      <View style={styles.card}>
-        <Text style={styles.title}>Yoga Stretch</Text>
-        <Text style={styles.info}>Duration: 20 min</Text>
-        <Text style={styles.info}>Calories: 120 kcal</Text>
-      </View>
-
-      <View style={styles.card}>
-        <Text style={styles.title}>Abs Workout</Text>
-        <Text style={styles.info}>Duration: 15 min</Text>
-        <Text style={styles.info}>Calories: 100 kcal</Text>
-      </View>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("WorkoutTimer")}
+      >
+        <Text style={styles.buttonText}>Start Workout</Text>
+      </TouchableOpacity>
 
     </ScrollView>
   );
@@ -44,8 +42,8 @@ const styles = StyleSheet.create({
   },
 
   header:{
-    fontSize:26,
     color:"#fff",
+    fontSize:26,
     fontWeight:"bold",
     marginBottom:20
   },
@@ -57,15 +55,29 @@ const styles = StyleSheet.create({
     marginBottom:15
   },
 
-  title:{
-    fontSize:18,
+  exercise:{
     color:"#fff",
-    fontWeight:"bold",
-    marginBottom:5
+    fontSize:18,
+    fontWeight:"bold"
   },
 
-  info:{
-    color:"#94a3b8"
+  reps:{
+    color:"#94a3b8",
+    marginTop:5
+  },
+
+  button:{
+    backgroundColor:"#22c55e",
+    padding:18,
+    borderRadius:12,
+    alignItems:"center",
+    marginTop:20
+  },
+
+  buttonText:{
+    color:"#fff",
+    fontSize:16,
+    fontWeight:"bold"
   }
 
 });

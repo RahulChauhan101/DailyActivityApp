@@ -6,6 +6,7 @@ import HomeScreen from "../screens/HomeScreen";
 import WorkoutScreen from "../screens/WorkoutScreen";
 import ProgressScreen from "../screens/ProgressScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import WorkoutDetailScreen from "../screens/WorkoutDetailScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -29,6 +30,7 @@ export default function BottomTabs() {
           else if(route.name==="Workout") iconName="barbell-outline";
           else if(route.name==="Progress") iconName="stats-chart-outline";
           else if(route.name==="Profile") iconName="person-outline";
+          else if(route.name==="WorkoutDetail") iconName="information-circle-outline";
 
           return <Icon name={iconName} size={24} color={color} />;
 
@@ -41,6 +43,7 @@ export default function BottomTabs() {
       <Tab.Screen name="Workout" component={WorkoutScreen}/>
       <Tab.Screen name="Progress" component={ProgressScreen}/>
       <Tab.Screen name="Profile" component={ProfileScreen}/>
+      <Tab.Screen name="WorkoutDetail" component={WorkoutDetailScreen}/>
 
     </Tab.Navigator>
 
