@@ -12,7 +12,7 @@ export default function HomeScreen({ navigation }) {
           <Icon name="menu" size={30} color="#fff" />
         </TouchableOpacity>
 
-        <Text style={styles.headerTitle}>Daily Activity</Text>
+        <Text style={styles.headerTitle}> My Daily Activity</Text>
       </View>
 
       {/* Main Content */}
